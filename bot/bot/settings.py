@@ -106,17 +106,5 @@ STATIC_URL = '/static/'
 BROKER_URL = 'amqp://myuser:mypassword@localhost:5672/myvhost'
 CELERY_RESULT_BACKEND = 'django-db'
 CELERY_BROKER_URL = 'amqp://localhost'
-# CELERY_BEAT_SCHEDULE = {
-#     'planner': {
-#         'task': 'task_planner.parsing_task',
-#         'schedule': 5.0,
-#         # 'schedule': crontab(minute=59, hour=23),
-#         # 'args': (*args)
-#     },
-#     # 'my-task': {
-#     #     'task': 'notifications.signals.courses.user_portal_registration_handler',
-#     #     # 'schedule': 10.0
-#     #     # 'schedule': crontab(minute=59, hour=23),
-#     #     # 'args': (*args)
-#     # }
-# }
+import django_heroku
+django_heroku.settings(locals())
