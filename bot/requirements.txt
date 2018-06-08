@@ -7,9 +7,13 @@ certifi==2018.4.16
 chardet==3.0.4
 Django==2.0.5
 django-celery-results==1.0.1
+gunicorn==19.8.1
 idna==2.6
 kombu==4.2.1
+pipenv==2018.5.18
 pytz==2018.4
 requests==2.18.4
 urllib3==1.22
 vine==1.1.4
+virtualenv==16.0.0
+virtualenv-clone==0.3.0
