@@ -19,7 +19,7 @@ class CWUser(models.Model):
         if self.tasks.first():
             return self.tasks.latest('created').name
         else:
-            return None
+            return []
 
 
 class Tasks(models.Model):

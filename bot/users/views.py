@@ -11,10 +11,8 @@ def parsing():
 	users = CWUser.objects.all()
 	for user in users:
 		last_tasks = parse_url(user.cw_url)
-		if user.last_task:
-			index = last_tasks.index(user.last_task)
-		else:
-			Tasks.objects.create(name=last_tasks[0], user=user)
-			index = 0
-		for task in last_tasks[:index]:
-			Tasks.objects.create(name=task, user=user)
+		for task in last_tasks:
+			if task in [str(i) for i in user.tasks.all()]:
+				pass
+			else:
+				Tasks.objects.create(name=task, user=user)
